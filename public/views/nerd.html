@@ -1,0 +1,27 @@
+	<!-- public/views/nerd.html -->
+
+	<div class="jumbotron text-center">
+	    <h1>Nerds and Proud</h1>
+
+	    <p>{{ tagline }}</p>
+
+			<div ng-controller="ExampleController">
+				<form novalidate class="simple-form">
+					<label>Name: <input type="test" ng-model="nerdName" /></lable></br>
+					<input type="submit" ng-click="update()" value="Save">
+				</form>
+
+			</div>
+
+			<script>
+				angular.module('formExample', [])
+				.controller('ExampleController', ['$scope', function($scope) {
+					$scope.update = function() {
+						console.log('update');
+						$http.post('/api/nerd', $scope.nerdName);
+						console.log('update done');
+					};
+
+				}]);
+			</script>
+	</div>
