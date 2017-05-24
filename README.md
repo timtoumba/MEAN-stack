@@ -1,7 +1,8 @@
-QUICK STARTER (https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application)
+# QUICK STARTER 
 How to set up a mean stack single page application
+(https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application)
 
-APP STRUCTURE
+## APP STRUCTURE
 
     - app
         ----- models/
@@ -30,10 +31,10 @@ APP STRUCTURE
     - server.js <!-- set up our node application -->
 
 
-NODE APPLICATION
+## NODE APPLICATION
 
 package.json
-```code
+```json
 	{
 		"name": "starter-node-angular",
 		"main": "server.js",
@@ -49,7 +50,7 @@ run
    	$ npm install
 
 setting up node application with server.js
-```code
+```javascript
 	// server.js
 
 	// modules =================================================
@@ -110,7 +111,7 @@ Config db (config/db.js) :
 
 Example to create records in database with Mongoose model (CRUD) : (here creation of a "Nerd" model)
 in app/models/nerd.js :
-```code
+```javascript
 	// app/models/nerd.js
 	// grab the mongoose module
 	var mongoose = require('mongoose');
@@ -123,7 +124,7 @@ in app/models/nerd.js :
 ```
 
 Setting up routes (app/routes.js) :
-```code
+```javascript
 	// app/routes.js
 
 	// grab the nerd model we just created
@@ -166,7 +167,7 @@ to set up database with mongoose : https://scotch.io/tutorials/using-mongoosejs-
 BACKEND DONE !
 
 Index view (public/views/index.html):
-```code
+```html
 	 <!-- public/views/index.html -->
 	<!doctype html>
 	<html lang="en">
@@ -190,21 +191,21 @@ Test server with :
 and visit http://localhost:8080
 
 
-FRONTEND WITH ANGULAR
+## FRONTEND WITH ANGULAR
 
 Bower : frontend tool to manage frontend resources (bootstrap, angular ...)
 	install with :
 	$ npm install -g bower
 
 config bower : in .bowerrc
-```code
+```json
 	{
 	    "directory": "public/libs"
 	}
 ```
 
 in bower.json
-```code
+```json
 	{
 	    "name": "starter-node-angular",
 	    "version": "1.0.0",
@@ -221,13 +222,13 @@ in bower.json
 run bower with :
 	$ bower install
 
-SETTING UP ANGULAR APP
+### SETTING UP ANGULAR APP
 controllers, services and routes (no page refreshement)
 
-Angular Controller
+#### Angular Controller
 
 in public/js/controllers/MainCtrl.js :
-```code
+```javascript
 	// public/js/controllers/MainCtrl.js
 	angular.module('MainCtrl', []).controller('MainController', function($scope) {
 
@@ -237,7 +238,7 @@ in public/js/controllers/MainCtrl.js :
 ```
 
 in public/js/controllers/NerdCtrl.js :
-```code
+```javascript
 	// public/js/controllers/NerdCtrl.js
 	angular.module('NerdCtrl', []).controller('NerdController', function($scope) {
 
@@ -246,11 +247,11 @@ in public/js/controllers/NerdCtrl.js :
 	});
 ```
 
-Angular Services :
+#### Angular Services :
 API calls to the Node backend from Angular frontend using $http or $resource
 
 in public/js/services/NerdService.js :
-```code
+```javascript
 	// public/js/services/NerdService.js
 	angular.module('NerdService', []).factory('Nerd', ['$http', function($http) {
 
@@ -275,9 +276,9 @@ in public/js/services/NerdService.js :
 	}]);
 ```
 
-Angular Routes :
+#### Angular Routes :
 defined in public/js/appRoutes.js :
-```code
+```javascript
 	// public/js/appRoutes.js
 	angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -300,10 +301,9 @@ defined in public/js/appRoutes.js :
 	}]);
 ```
 
-Update View Files
-
+#### Update View Files
 public/views/index.html :
-```code
+```html
 	<!-- public/index.html -->
 	<!doctype html>
 	<html lang="en">
@@ -352,7 +352,7 @@ public/views/index.html :
 ```
 
 public/views/home.html :
-```code
+```html
 	<!-- public/views/home.html -->
 
 	<div class="jumbotron text-center">
@@ -363,7 +363,7 @@ public/views/home.html :
 ```
 
 public/views/nerd.html :
-```code
+```html
 	<!-- public/views/nerd.html -->
 
 	<div class="jumbotron text-center">
@@ -373,9 +373,9 @@ public/views/nerd.html :
 	</div>
 ```
 
-ANGULAR DEPENDENCIES
+### ANGULAR DEPENDENCIES
 in public/js/app.js :
-```code
+```javascript
 	// public/js/app.js
 	angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService']);
 ```
