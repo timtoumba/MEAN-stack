@@ -1,5 +1,5 @@
 # QUICK STARTER 
-How to set up a mean stack single page application
+How to set up a mean stack single page application </br>
 (https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application)
 
 ## APP STRUCTURE
@@ -47,7 +47,9 @@ package.json
 	}
 ```
 run
-   	$ npm install
+```bash
+	$ npm install
+```
 
 setting up node application with server.js
 ```javascript
@@ -186,7 +188,9 @@ Index view (public/views/index.html):
 ```
 
 Test server with :
+```bash
 	$ node server.js
+```
 
 and visit http://localhost:8080
 
