@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 // grab the nerd model we just created
 var Nerd = require('./models/nerd');
 
-var uri = "mongodb://admin:adnx2016@test-database-shard-00-00-27l64.mongodb.net:27017,test-database-shard-00-01-27l64.mongodb.net:27017,test-database-shard-00-02-27l64.mongodb.net:27017/test-database?ssl=true&replicaSet=test-database-shard-0&authSource=admin";
+var uri = "mongodb://localhost/path/to/database";
 mongoose.connect(uri, function(err) {
  if (err) return console.log(err);
  console.log("Connected successfully to server");
